@@ -10,6 +10,7 @@
   * [1.20](./docs/week/0120.md)
   * [2.17](./docs/week/0217.md)
   * [2.24](./docs/week/0224.md)
+  * [3.3](./docs/week/0303.md)
 
 * 日报
 
