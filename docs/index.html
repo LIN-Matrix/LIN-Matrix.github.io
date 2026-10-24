@@ -1,84 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>本科毕设记录文档</title>
-  <link rel="icon" href="./asserts/logo.jpeg" type="image/png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-</head>
-<body>
-  <div id="app"></div>
-  <script>
-    window.$docsify = {
-      name: '本科毕设记录文档',
-      repo: '',
-      loadSidebar: true,
-      search : 'auto',
-      homepage: 'README.md',
-      markdown: {
-        renderer: {
-          image: function(href, title, text) {
-            // 按照原来的渲染 img
-            var image_html = this.origin.image.apply(this, arguments)
-            // 用 figure 包一下图片，实现居中
-            return '<figure>' + image_html + '<figcaption>' + text +
-                '</figcaption></figure>'
-          },
-        }
-      },
-      subMaxLevel: 2,
-      hideCode: {
-        scroll: true,
-        height: 460,
-      },
-      count:{
-      countable: true,
-      position: 'top',
-      margin: '10px',
-      float: 'right',
-      fontsize:'0.9em',
-      color:'rgb(90,90,90)',
-      localization: {
-        words: "",
-        minute: ""
-      },
-      isExpected: true
-    },
-    }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ethan Lin</title>
+  <meta name="description" content="Ethan Lin (林奕辰) — Independent Researcher. B.Eng. in Computer Science and Technology, Tsinghua University (2021–2025).">
+  <meta name="author" content="Ethan Lin">
+  <link rel="canonical" href="https://lin-matrix.github.io/">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Ethan Lin">
+  <meta property="og:description" content="Independent Researcher. Tsinghua University CS, 2021–2025.">
+  <meta property="og:url" content="https://lin-matrix.github.io/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ethan Lin",
+    "alternateName": "林奕辰",
+    "jobTitle": "Independent Researcher",
+    "email": "mailto:2848327718@qq.com",
+    "url": "https://lin-matrix.github.io/",
+    "alumniOf": {"@type": "CollegeOrUniversity", "name": "Tsinghua University"},
+    "sameAs": ["https://github.com/LIN-Matrix"]
+  }
   </script>
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-c.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-rust.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
-  <script src="//cdn.jsdelivr.net/npm/marked@4"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-hide-code/dist/docsify-hide-code.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
-
-  <!-- CDN files for docsify-katex -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-  <!-- or <script src="//cdn.jsdelivr.net/gh/upupming/docsify-katex@latest/dist/docsify-katex.js"></script> -->
   <style>
-    figure {
-        text-align: center
+    :root {
+      --bg: #fbfbf9; --fg: #1d1d1b; --muted: #6a6a64; --rule: #e4e3de; --accent: #6b2a7a;
+      --font: "Charter", "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
     }
-     .myImageClass {
-        width: 100vw; /* 宽度设为视窗宽度的100% */
-        height: auto; /* 高度等比例自适应 */
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #161615; --fg: #e9e8e3; --muted: #9b9a93; --rule: #2e2e2b; --accent: #d1a3dc; }
     }
-
-    /* 桌面端样式：通常以屏幕宽度为768px作为移动端和桌面端的分界点 */
-    @media (min-width: 768px) {
-        .myImageClass {
-            width: 40vw; /* 宽度设为视窗宽度的50% */
-        }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.65 var(--font); }
+    main { max-width: 720px; margin: 0 auto; padding: 64px 20px 48px; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover, a:focus-visible { border-bottom-color: currentColor; }
+    header h1 { font-size: 2.3rem; line-height: 1.15; margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+    header h1 .cn { font-family: var(--sans); font-weight: 400; font-size: 1.15rem; color: var(--muted); margin-left: .4em; }
+    .role { margin: .4rem 0 1rem; font-family: var(--sans); font-size: .98rem; color: var(--muted); }
+    .links { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-family: var(--sans); font-size: .93rem; padding: 0; margin: 0; list-style: none; }
+    h2 { font-family: var(--sans); font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted);
+         margin: 2.6rem 0 .9rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rule); }
+    p { margin: 0 0 1rem; }
+    .entry { display: grid; grid-template-columns: 1fr auto; gap: 0 1rem; margin-bottom: 1.15rem; }
+    .entry .what { font-weight: 600; }
+    .entry .when { font-family: var(--sans); font-size: .88rem; color: var(--muted); white-space: nowrap; padding-top: .15rem; }
+    .entry .detail { grid-column: 1 / -1; color: var(--fg); }
+    .entry .detail .sub { color: var(--muted); }
+    code { font-size: .85em; }
+    ul.plain { margin: 0; padding-left: 1.1rem; }
+    ul.plain li { margin-bottom: .45rem; }
+    footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: .82rem; color: var(--muted); }
+    @media (max-width: 560px) {
+      main { padding-top: 40px; }
+      header h1 { font-size: 1.9rem; }
+      .entry { grid-template-columns: 1fr; }
+      .entry .when { padding-top: 0; }
     }
   </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Ethan Lin<span class="cn" lang="zh-CN">林奕辰</span></h1>
+    <p class="role">Independent Researcher</p>
+    <ul class="links">
+      <li>Email: <a href="mailto:2848327718@qq.com">2848327718@qq.com</a></li>
+      <li><a href="https://github.com/LIN-Matrix">GitHub</a></li>
+    </ul>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p>I am an independent researcher. I received my bachelor's degree in Computer Science and Technology
+      from <a href="https://www.cs.tsinghua.edu.cn/csen/">Tsinghua University</a> in 2025.
+      My background is in systems, including operating-system kernels written in Rust.</p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="what">Tsinghua University</div>
+      <div class="when">Sep 2021 – Jul 2025</div>
+      <div class="detail">B.Eng. in Computer Science and Technology, Department of Computer Science and Technology</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="entry">
+      <div class="what">Independent Researcher</div>
+      <div class="when">2025 – present</div>
+    </div>
+    <div class="entry">
+      <div class="what">Shanghai Tritium Network Technology · Intern</div>
+      <div class="when">Jan 2024 – Feb 2024</div>
+      <div class="detail">Built a shared internal interface for on-chain currency transactions.</div>
+    </div>
+    <div class="entry">
+      <div class="what">ByteDance (Lark) · Software Engineering Intern</div>
+      <div class="when">Jun 2023 – Oct 2023</div>
+      <div class="detail">Developed an AI-powered analysis assistant (AskAI) in Go.</div>
+    </div>
+    <div class="entry">
+      <div class="what">Intelligent Transportation Lab, Dept. of Automation, Tsinghua University · Undergraduate Research</div>
+      <div class="when">Jul 2022 – May 2023</div>
+      <div class="detail">Data analysis and visualization for reinforcement-learning research on autonomous-driving scenario generation.</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Open Source</h2>
+    <ul class="plain">
+      <li><a href="https://github.com/chyyuu/arceos-for-starry/commit/60669664f0d83b76bd88799d0a165e2ef48f1b18">Refactor of <code>axnet</code></a>,
+        the ArceOS network module (smoltcp-based TCP/UDP, DNS, loopback), merged into <code>arceos-for-starry</code>, the ArceOS base for the Starry kernel (2025).</li>
+      <li><a href="https://github.com/oscomp/oskernel-testsuits-cooperation/commit/2604ee7ade21a0576074ddb321d60b7f816d6d7c">iperf test documentation</a>
+        for the OS kernel competition test suite <code>oscomp/oskernel-testsuits-cooperation</code> (2025).</li>
+    </ul>
+  </section>
+
+  <footer>Last updated October 2026</footer>
+</main>
 </body>
 </html>
