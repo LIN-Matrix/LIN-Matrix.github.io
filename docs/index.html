@@ -38,6 +38,8 @@
     main { max-width: 720px; margin: 0 auto; padding: 64px 20px 48px; }
     a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
     a:hover, a:focus-visible { border-bottom-color: currentColor; }
+    header { display: flex; align-items: center; gap: 1.6rem; }
+    .avatar { width: 128px; height: 128px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--rule); }
     header h1 { font-size: 2.3rem; line-height: 1.15; margin: 0; font-weight: 600; letter-spacing: -0.01em; }
     .role { margin: .4rem 0 1rem; font-family: var(--sans); font-size: .98rem; color: var(--muted); }
     .links { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; font-family: var(--sans); font-size: .93rem; padding: 0; margin: 0; list-style: none; }
@@ -56,6 +58,8 @@
     @media (max-width: 560px) {
       main { padding-top: 40px; }
       header h1 { font-size: 1.9rem; }
+      header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .avatar { width: 96px; height: 96px; }
       .entry { grid-template-columns: 1fr; }
       .entry .when { padding-top: 0; }
     }
@@ -64,12 +68,15 @@
 <body>
 <main>
   <header>
+    <img class="avatar" src="avatar.jpg" alt="Ethan Lin" width="128" height="128">
+    <div>
     <h1>Ethan Lin</h1>
     <p class="role">Independent Researcher</p>
     <ul class="links">
       <li>Email: <a href="mailto:2848327718@qq.com">2848327718@qq.com</a></li>
       <li><a href="https://github.com/LIN-Matrix">GitHub</a></li>
     </ul>
+    </div>
   </header>
 
   <section>
@@ -98,11 +105,6 @@
       <div class="what">Shanghai Tritium Network Technology · Intern</div>
       <div class="when">Jan 2024 – Feb 2024</div>
       <div class="detail">Built a shared internal interface for on-chain currency transactions.</div>
-    </div>
-    <div class="entry">
-      <div class="what">ByteDance (Lark) · Software Engineering Intern</div>
-      <div class="when">Jun 2023 – Oct 2023</div>
-      <div class="detail">Developed an AI-powered analysis assistant (AskAI) in Go.</div>
     </div>
     <div class="entry">
       <div class="what">Intelligent Transportation Lab, Dept. of Automation, Tsinghua University · Undergraduate Research</div>
